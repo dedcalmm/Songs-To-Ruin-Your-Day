@@ -25,6 +25,36 @@
     h1 {
       margin-bottom: 30px;
     }
+	
+ <meta charset="UTF-8">
+  <title>Page with Background</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://cdn.discordapp.com/attachments/1268751944030355511/1394528063483809903/IMG_3591.jpg?ex=687722f7&is=6875d177&hm=bedf9eed936cd864e7c9ee69eddc38e018c4376affeebd3f53aee07bda95f3dd&');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      color: white; /* Text color over the background */
+      font-family: Arial, sans-serif;
+    }
+
+    .content {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.5); /* Optional: translucent box for readability */
+      max-width: 600px;
+      margin: 50px auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+	<button onclick="alert('You better listen to each and every fucking song <:')">Click Me</button>
+  </div>
+	
   </style>
 </head>
 <body>
@@ -202,6 +232,101 @@
   <br>
   
 </p>
+
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Back to Top Button</title>
+  <style>
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: none; /* Hidden initially */
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="height: 2000px;">
+   
+  </div>
+
+  <button id="backToTop">↑ Top</button>
+
+  <script>
+    const btn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify Background Music</title>
+  <style>
+    #spotifyPlayer {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 300px;
+      height: 80px;
+      border: none;
+      transition: opacity 0.3s ease;
+    }
+
+    #toggleButton {
+      position: fixed;
+      bottom: 100px;
+      left: 10px;
+      padding: 8px 16px;
+      background-color: #1DB954;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe
+    id="spotifyPlayer"
+    src="https://open.spotify.com/embed/track/5JXtkWtuqS8Dm8sKbtPGWa?utm_source=generator"
+    allow="encrypted-media"
+    loading="lazy"
+  ></iframe>
+
+  <button id="toggleButton">Song Of The Day</button>
+
+  <script>
+    const btn = document.getElementById('toggleButton');
+    const player = document.getElementById('spotifyPlayer');
+    let isVisible = true;
+
+    btn.addEventListener('click', () => {
+      isVisible = !isVisible;
+      player.style.opacity = isVisible ? '1' : '0';
+      btn.textContent = isVisible ? 'Mute' : 'Unmute';
+    });
+  </script>
 
 </body>
 </html>
